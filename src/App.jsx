@@ -11,6 +11,8 @@ import { useDispatch, useSelector } from "react-redux"
 import { getProductsThunk } from './store/slice/products.slice'
 import { useEffect } from 'react'
 import { Container } from 'react-bootstrap'
+import ProtectedRoutes from './components/ProtecterRoute'
+import Purchases from './pages/Purchases'
 
 function App() {
 
@@ -27,12 +29,17 @@ function App() {
         <MyNav />
         {loadingScreen && <LoadingScreen />}
         <Container className='mt-5'>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/product/:id' element={<NewProductId />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/products' element={<Products />} />
-        </Routes>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/product/:id' element={<NewProductId />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/products' element={<Products />} />
+
+            <Route element={<ProtectedRoutes />}>
+              <Route path='/purchases' element={<Purchases />} />
+            </Route>
+
+          </Routes>
         </Container>
       </HashRouter>
     </div>

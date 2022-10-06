@@ -69,16 +69,25 @@ const Home = () => {
 
                 <Row xs={1} md={2} xl={3} className="g-4">
                     {newFiltered.map(product => (
-                        <Col  
-                        key={product.title} 
-                        onClick={() => navigate(`/product/${product.id}`)}
+                        <Col
+                            key={product.title}
+                            onClick={() => navigate(`/product/${product.id}`)}
                         >
-                            <Card   style={{height:"100%"}}>
-                                <Card.Img className="img-fluid" src={product.productImgs[1]} variant="top"  />
+                            <Card style={{ height: "100%" }}>
+                                <Card.Img className="img-fluid" src={product.productImgs[1]} variant="top" />
                                 <Card.Body>
                                     <Card.Title> {product.title}</Card.Title>
                                     <Card.Text>
-                                        {product.description}
+                                        <Row>
+                                            <Col>
+                                                {"Price:"}
+                                                {" "}
+                                                {product.price}
+                                            </Col>
+                                            <Col lg={3}>
+                                                <i style={{ color: "green", fontSize: "1.7rem" }} class="fa-sharp fa-solid fa-cart-arrow-down"></i>
+                                            </Col>
+                                        </Row>
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
