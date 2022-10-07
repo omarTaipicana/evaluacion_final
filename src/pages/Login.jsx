@@ -8,20 +8,20 @@ import { setLoadingScreen } from '../store/slice/loading.screen.slice';
 const Login = () => {
 
     const { register, handleSubmit } = useForm()
-    const navigate=useNavigate()
-    const dispatch=useDispatch()
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     console.log(localStorage.getItem("name"))
 
     const sumbit = (data) => {
         dispatch(setLoadingScreen(true))
-        console.log(data)
-               axios
+        axios
             .post(`https://ecommerce-api-react.herokuapp.com/api/v1/users/login`, data)
             .then(res => {
                 localStorage.setItem("token", res?.data?.data?.token)
+                localStorage.setItem("name", res?.data?.data?.user?.firstName)
+                
                 navigate("/")
-                alert("usuario logueado")
             })
             .finally(() => dispatch(setLoadingScreen(false)))
             .catch(error => error.response?.status === 404 && alert("credenciales invalidas"))

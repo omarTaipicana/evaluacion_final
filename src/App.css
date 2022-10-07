@@ -4,21 +4,129 @@
     box-sizing: border-box;
 }
 
-
-/* div.carousel-img.active{
-    display: flex;
-    justify-content: center;
-} */
-
-.carousel-img {
-    height: 50vh;
-}
-
-img.d-block {
-    height: 100%;
-}
-
-.col-lg-3{
+.col-lg-3 {
     text-align: center;
 }
 
+h1 {
+    text-align: center;
+}
+
+.search-content {
+    display: flex;
+    justify-content: space-around;
+    height: 4rem;
+    border: solid rgba(0, 0, 0, 0.328);
+    padding: 0.5rem;
+    align-items: center;
+    margin: 1rem 2rem 2rem 2rem;
+}
+
+.search {
+    height: 2.5rem;
+    border-radius: 0.2rem;
+    padding: 0 1rem;
+}
+
+select {
+    width: 15rem;
+}
+
+input::-webkit-input-placeholder {
+    text-align: center;
+}
+
+.products-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card-content {
+    width: 24%;
+    border-radius: 1rem;
+    border: solid 0.1rem rgba(0, 0, 0, 0.331);
+    padding: 0.5rem;
+    text-align: center;
+    transition: .10s;
+
+}
+
+.card-content:hover {
+    border: solid 0.1rem black;
+}
+
+.img-products {
+    width: auto;
+    height: 10rem;
+    margin-bottom: 1rem;
+}
+
+/* ----------------------------------------------------------------- */
+
+.d-block {
+    height: 20rem;
+    margin: 1rem auto;
+}
+
+.carousel-content {
+    border: solid rgba(128, 128, 128, 0.278);
+    margin: 1rem;
+}
+
+.product-info-content {
+    display: flex;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.info-product {
+    border: solid rgba(128, 128, 128, 0.278);
+    padding: 2rem 2rem 2rem 2rem;
+    margin:1rem;
+
+}
+
+.add-to-car{
+    text-align: center; 
+    border: 
+}
+
+/* --------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------ */
+
+  
+@media screen and (max-width: 1024px) {
+    .search-content {
+        display: flex;
+        flex-direction: column;
+        height: 9rem;
+        text-align: center;
+    }
+    
+    .card-content{
+        width: 40%;
+    }
+    .product-info-content {
+    flex-direction: column;
+}
+  }
+
+  @media screen and (max-width: 645px) {
+    .search-content {
+        display: flex;
+        flex-direction: column;
+        height: 9rem;
+        text-align: center;
+    }
+
+    .card-content{
+        width: 90%;
+    }
+  }

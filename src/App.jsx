@@ -12,6 +12,7 @@ import { useEffect } from 'react'
 import { Container } from 'react-bootstrap'
 import ProtectedRoutes from './components/ProtecterRoute'
 import Purchases from './pages/Purchases'
+import SigIn from './pages/SigIn'
 
 function App() {
 
@@ -32,7 +33,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/product/:id' element={<NewProductId />} />
             <Route path='/login' element={<Login />} />
-
+            <Route path='/sigin' element={<SigIn />} />
             <Route element={<ProtectedRoutes />}>
               <Route path='/purchases' element={<Purchases />} />
             </Route>
