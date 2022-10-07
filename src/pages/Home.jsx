@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom"
 import { useState } from 'react';
@@ -67,28 +67,28 @@ const Home = () => {
             </Col>
             <Col>
 
-                <Row xs={1} md={2} xl={3} className="g-4">
+                <Row xs={1} md={2} xl={3}  className="g-3">
                     {newFiltered.map(product => (
                         <Col
                             key={product.title}
                             onClick={() => navigate(`/product/${product.id}`)}
                         >
-                            <Card style={{ height: "100%" }}>
-                                <Card.Img className="img-fluid" src={product.productImgs[1]} variant="top" />
+                            <Card style={{ height: "min-content" }}>
+                                <Card.Img style={{height:"auto"}}  src={product.productImgs[1]} variant="top" />
                                 <Card.Body>
                                     <Card.Title> {product.title}</Card.Title>
-                                    <Card.Text>
+                                    <div>
                                         <Row>
                                             <Col>
                                                 {"Price:"}
                                                 {" "}
                                                 {product.price}
                                             </Col>
-                                            <Col lg={3}>
-                                                <i style={{ color: "green", fontSize: "1.7rem" }} class="fa-sharp fa-solid fa-cart-arrow-down"></i>
+                                            <Col lg={3} >
+                                                <i style={{ color: "green", fontSize: "1.7rem" }} className="fa-sharp fa-solid fa-cart-arrow-down"></i>
                                             </Col>
                                         </Row>
-                                    </Card.Text>
+                                    </div>
                                 </Card.Body>
                             </Card>
                         </Col>

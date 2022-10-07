@@ -21,11 +21,11 @@ const Purchases = () => {
             <Card >
                 <ListGroup>
                     {shoping.map(shoping => (
-                        <ListGroupItem key={shoping.id } >
+                        <ListGroupItem key={shoping.updatedAt} >
                             <ListGroupItem variant='dark'>
                                 <Card.Header as="h5" >{format(new Date(shoping.updatedAt), "MMM-d-Y")}</Card.Header>
                                 {shoping.cart.products.map(product => (
-                                    <ListGroup.Item key={product.price}>
+                                    <ListGroup.Item key={product.updatedAt}>
                                         <Row >
                                             <Col>{product.title}</Col>
                                             <Col>{"Amount:"}{" "}{product?.productsInCart?.quantity}</Col>

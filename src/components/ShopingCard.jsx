@@ -1,9 +1,9 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { Col, ListGroup, ListGroupItem, Offcanvas, Row } from 'react-bootstrap';
+import { Button, Col, ListGroup, ListGroupItem, Offcanvas, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { getCarProductsThunk } from '../store/slice/cart.products.slice';
+import { deleteProductCartThunk, getCarProductsThunk, purchasesCartThunk } from '../store/slice/cart.products.slice';
 
 const ShopingCard = ({ show, handleClose }) => {
 
@@ -14,6 +14,16 @@ const ShopingCard = ({ show, handleClose }) => {
     useEffect(() => {
         dispatch(getCarProductsThunk())
     }, [])
+
+    const deleteProductCart=(id)=>{
+        dispatch(deleteProductCartThunk(id))
+    }
+
+    const purchasesCart=()=>{
+        dispatch(purchasesCartThunk())
+        navigate("/purchases")
+        // setShow(true)
+    }
 
     return (
         <Offcanvas show={show} onHide={handleClose} placement="end">
@@ -36,7 +46,7 @@ const ShopingCard = ({ show, handleClose }) => {
                                                 {product.price}
                                             </Col>
                                             <Col lg={2}>
-                                                <i className="fa-solid fa-trash-can" style={{ color: "red", fontSize: "1.7rem" }}></i>
+                                                <i onClick={()=>deleteProductCart(product.id)} className="fa-solid fa-trash-can" style={{ color: "red", fontSize: "1.7rem" }}></i>
                                             </Col>
 
                                         </Row>
@@ -46,6 +56,7 @@ const ShopingCard = ({ show, handleClose }) => {
                         </ListGroup>
                     ))
                 }
+                <Button onClick={purchasesCart}>to buy</Button>
             </Offcanvas.Body>
         </Offcanvas>
     );
