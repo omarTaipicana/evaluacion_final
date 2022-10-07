@@ -24,7 +24,7 @@ const MyNav = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#products" to="/products" as={Link}>Products</Nav.Link>
+                            <Nav.Link href="#" to="/" as={Link}>Products</Nav.Link>
                             <Nav.Link href="#purchases" to="/purchases" as={Link}>Purchases</Nav.Link>
                             <Nav.Link onClick={handleShow} >Shopping cart</Nav.Link>
                             <Nav.Link href="#login" to="/login" as={Link}>Login</Nav.Link>

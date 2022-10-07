@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getShopingThunk } from '../store/slice/shoping.slice';
 import { format } from "date-fns";
 import { Button, Card, Col, Form, InputGroup, ListGroup, ListGroupItem, Row } from 'react-bootstrap';
-import Table from 'react-bootstrap/Table';
 
 const Purchases = () => {
 
@@ -22,10 +21,10 @@ const Purchases = () => {
                 <ListGroup>
                     {shoping.map(shoping => (
                         <ListGroupItem key={shoping.updatedAt} >
-                            <ListGroupItem variant='dark'>
-                                <Card.Header as="h5" >{format(new Date(shoping.updatedAt), "MMM-d-Y")}</Card.Header>
+                            <ListGroupItem  variant='dark'>
+                                <Card.Header  as="h5" >{format(new Date(shoping.updatedAt), "MMM-d-Y")}</Card.Header>
                                 {shoping.cart.products.map(product => (
-                                    <ListGroup.Item key={product.updatedAt}>
+                                    <ListGroup.Item key={product.title}>
                                         <Row >
                                             <Col>{product.title}</Col>
                                             <Col>{"Amount:"}{" "}{product?.productsInCart?.quantity}</Col>

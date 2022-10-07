@@ -4,7 +4,6 @@ import { HashRouter, Routes, Route } from "react-router-dom"
 import Home from './pages/Home'
 import NewProductId from './pages/NewProductId'
 import Login from './pages/Login'
-import Products from './pages/Products'
 import MyNav from './components/MyNav'
 import LoadingScreen from './components/LoadingScreen'
 import { useDispatch, useSelector } from "react-redux"
@@ -33,7 +32,6 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/product/:id' element={<NewProductId />} />
             <Route path='/login' element={<Login />} />
-            <Route path='/products' element={<Products />} />
 
             <Route element={<ProtectedRoutes />}>
               <Route path='/purchases' element={<Purchases />} />
